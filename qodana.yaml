@@ -8,8 +8,6 @@ profile:
   name: qodana.recommended
 include:
   - name: CheckDependencyLicenses
-with:
-  pr-mode: false
 
 disableSanityInspections: true
 
