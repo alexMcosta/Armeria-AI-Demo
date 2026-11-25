@@ -105,9 +105,6 @@ public final class HttpFileResponseConverterFunction implements ResponseConverte
         if (headers.isEmpty()) {
             return false;
         }
-        if (headers.size() == 1 && headers.contains(HttpHeaderNames.STATUS)) {
-            return false;
-        }
-        return true;
+        return headers.size() != 1 || !headers.contains(HttpHeaderNames.STATUS);
     }
 }

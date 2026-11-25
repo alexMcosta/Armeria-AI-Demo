@@ -598,11 +598,8 @@ class HttpHeadersBase
         }
         // The order should be "application/*, */*".
         final int wildcardCompare = Integer.compare(m1.numWildcards(), m2.numWildcards());
-        if (wildcardCompare != 0) {
-            return wildcardCompare;
-        }
+        return wildcardCompare;
         // Preserve the original order.
-        return 0;
     }
 
     @Nullable

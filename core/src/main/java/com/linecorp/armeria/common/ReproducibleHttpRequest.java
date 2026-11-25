@@ -67,7 +67,7 @@ final class ReproducibleHttpRequest
      */
     private static StreamMessage<HttpObject> lazyBody(
             Supplier<? extends StreamMessage<? extends HttpObject>> bodyFactory) {
-        return StreamMessage.of((Publisher<HttpObject>) subscriber -> {
+        return StreamMessage.of(subscriber -> {
             final StreamMessage<? extends HttpObject> body;
             try {
                 body = bodyFactory.get();

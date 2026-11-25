@@ -297,47 +297,47 @@ abstract class StringMultimapBuilder<
 
     public final boolean contains(IN_NAME name) {
         final CONTAINER getters = getters();
-        return getters != null ? getters.contains(name) : false;
+        return getters != null && getters.contains(name);
     }
 
     public final boolean contains(IN_NAME name, String value) {
         final CONTAINER getters = getters();
-        return getters != null ? getters.contains(name, value) : false;
+        return getters != null && getters.contains(name, value);
     }
 
     public final boolean containsObject(IN_NAME name, Object value) {
         final CONTAINER getters = getters();
-        return getters != null ? getters.containsObject(name, value) : false;
+        return getters != null && getters.containsObject(name, value);
     }
 
     public final boolean containsBoolean(IN_NAME name, boolean value) {
         final CONTAINER getters = getters();
-        return getters != null ? getters.containsBoolean(name, value) : false;
+        return getters != null && getters.containsBoolean(name, value);
     }
 
     public final boolean containsInt(IN_NAME name, int value) {
         final CONTAINER getters = getters();
-        return getters != null ? getters.containsInt(name, value) : false;
+        return getters != null && getters.containsInt(name, value);
     }
 
     public final boolean containsLong(IN_NAME name, long value) {
         final CONTAINER getters = getters();
-        return getters != null ? getters.containsLong(name, value) : false;
+        return getters != null && getters.containsLong(name, value);
     }
 
     public final boolean containsFloat(IN_NAME name, float value) {
         final CONTAINER getters = getters();
-        return getters != null ? getters.containsFloat(name, value) : false;
+        return getters != null && getters.containsFloat(name, value);
     }
 
     public final boolean containsDouble(IN_NAME name, double value) {
         final CONTAINER getters = getters();
-        return getters != null ? getters.containsDouble(name, value) : false;
+        return getters != null && getters.containsDouble(name, value);
     }
 
     public final boolean containsTimeMillis(IN_NAME name, long value) {
         final CONTAINER getters = getters();
-        return getters != null ? getters.containsTimeMillis(name, value) : false;
+        return getters != null && getters.containsTimeMillis(name, value);
     }
 
     public final int size() {
@@ -591,7 +591,7 @@ abstract class StringMultimapBuilder<
     }
 
     public final boolean remove(IN_NAME name) {
-        return contains(name) ? setters().remove(name) : false;
+        return contains(name) && setters().remove(name);
     }
 
     public final SELF removeAndThen(IN_NAME name) {

@@ -110,7 +110,7 @@ final class ServerSetsInstanceConverter {
 
         @Override
         public ServerSetsInstance deserialize(JsonParser p, DeserializationContext ctxt)
-                throws IOException, JsonProcessingException {
+                throws IOException {
             final JsonNode tree = p.getCodec().readTree(p);
             final JsonNode serviceEndpointNode = tree.get(SERVICE_ENDPOINT);
             final Endpoint serviceEndpoint = endpoint(serviceEndpointNode);

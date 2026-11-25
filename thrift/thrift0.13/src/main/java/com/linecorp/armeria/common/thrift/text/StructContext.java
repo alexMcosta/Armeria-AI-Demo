@@ -171,7 +171,7 @@ final class StructContext extends PairContext {
             // Get the metaDataMap for this Thrift class
             @SuppressWarnings("unchecked")
             final Map<? extends TFieldIdEnum, FieldMetaData> metaDataMap =
-                    ThriftMetadataAccess.getStructMetaDataMap((Class<T>) clazz);
+                    ThriftMetadataAccess.getStructMetaDataMap(clazz);
 
             for (Entry<? extends TFieldIdEnum, FieldMetaData> e : metaDataMap.entrySet()) {
                 final String fieldName = e.getKey().getFieldName();

@@ -77,7 +77,7 @@ public final class CompositeException extends RuntimeException {
 
     private final List<Throwable> exceptions;
     private final String message;
-    private boolean isVerboseException;
+    private final boolean isVerboseException;
 
     @Nullable
     private Throwable cause;

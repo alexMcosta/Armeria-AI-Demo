@@ -1354,11 +1354,9 @@ abstract class StringMultimap<IN_NAME extends CharSequence, NAME extends IN_NAME
             }
 
             assert value != null;
-            return new StringBuilder(key.length() + value.length() + 1)
-                    .append(key)
-                    .append('=')
-                    .append(value)
-                    .toString();
+            return String.valueOf(key) +
+                    '=' +
+                    value;
         }
     }
 }

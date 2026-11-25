@@ -128,21 +128,19 @@ public class MethodInvokerBenchmark {
     }
 
     public String method1(String param0, int param1, Long param2, float param3) {
-        final StringBuilder builder = new StringBuilder()
-                .append(param0)
-                .append(param1)
-                .append(param2)
-                .append(param3);
-        return builder.toString();
+        String builder = param0 +
+                param1 +
+                param2 +
+                param3;
+        return builder;
     }
 
     public static String method2(String param0, int param1, Long param2, float param3) {
-        final StringBuilder builder = new StringBuilder()
-                .append(param0)
-                .append(param1)
-                .append(param2)
-                .append(param3);
-        return builder.toString();
+        String builder = param0 +
+                param1 +
+                param2 +
+                param3;
+        return builder;
     }
 
     public String method3(String param0, int... params) {

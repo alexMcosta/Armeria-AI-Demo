@@ -279,9 +279,6 @@ public class ArmeriaSpringActuatorAutoConfiguration {
         assert MANAGEMENT_SERVER_PORT_METHOD != null;
         try {
             final Port port = (Port) MANAGEMENT_SERVER_PORT_METHOD.invoke(internalServices);
-            if (port == null) {
-                return null;
-            }
             return port;
         } catch (IllegalAccessException | InvocationTargetException e) {
             return null;

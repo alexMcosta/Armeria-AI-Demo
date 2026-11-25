@@ -63,7 +63,7 @@ public final class RequestContextUtil {
     private static final Set<Thread> REPORTED_THREADS =
             Collections.newSetFromMap(new MapMaker().weakKeys().makeMap());
 
-    private static boolean loaded;
+    private static final boolean loaded;
 
     private static RequestContextStorage requestContextStorage;
 

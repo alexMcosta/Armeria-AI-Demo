@@ -101,12 +101,11 @@ public final class DnsQuestionWithoutTrailingDot implements DnsQuestion {
 
     @Override
     public String toString() {
-        final StringBuilder buf = new StringBuilder(64);
-        buf.append("DnsQuestion(")
-           .append(name())
-           .append(" IN ")
-           .append(type().name())
-           .append(')');
-        return buf.toString();
+        String buf = "DnsQuestion(" +
+                name() +
+                " IN " +
+                type().name() +
+                ')';
+        return buf;
     }
 }

@@ -437,7 +437,7 @@ public abstract class Http1ObjectEncoder implements HttpObjectEncoder {
 
         @Override
         public boolean add(Entry<HttpObject, ChannelPromise> httpObjectChannelPromiseEntry) {
-            return isEndOfStream() ? false : super.add(httpObjectChannelPromiseEntry);
+            return !isEndOfStream() && super.add(httpObjectChannelPromiseEntry);
         }
 
         boolean isEndOfStream() {

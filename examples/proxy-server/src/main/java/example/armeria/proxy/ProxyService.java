@@ -117,13 +117,12 @@ public final class ProxyService extends AbstractHttpService {
     private static HttpRequest addForwarded(ServiceRequestContext ctx, HttpRequest req) {
         // This is a simplified example. Please refer to https://datatracker.ietf.org/doc/rfc7239/
         // for more information about Forwarded header.
-        final StringBuilder sb = new StringBuilder();
-        sb.append("for: ").append(ctx.remoteAddress().getAddress().getHostAddress());
-        sb.append(", host: ").append(req.authority());
-        sb.append(", proto: ").append(ctx.sessionProtocol());
+        String sb = "for: " + ctx.remoteAddress().getAddress().getHostAddress() +
+                ", host: " + req.authority() +
+                ", proto: " + ctx.sessionProtocol();
 
         return req.withHeaders(req.headers().toBuilder()
-                                  .add(HttpHeaderNames.FORWARDED, sb.toString()));
+                                  .add(HttpHeaderNames.FORWARDED, sb));
     }
 
     private static HttpResponse addViaHeader(HttpResponse res) {

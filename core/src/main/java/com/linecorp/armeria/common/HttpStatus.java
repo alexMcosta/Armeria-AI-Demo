@@ -436,10 +436,9 @@ public final class HttpStatus implements Comparable<HttpStatus> {
         codeClass = HttpStatusClass.valueOf(statusCode);
         this.reasonPhrase = reasonPhrase;
 
-        strVal = new StringBuilder(reasonPhrase.length() + 5).append(statusCode)
-                                                             .append(' ')
-                                                             .append(reasonPhrase)
-                                                             .toString();
+        strVal = String.valueOf(statusCode) +
+                ' ' +
+                reasonPhrase;
         httpData = HttpData.ofUtf8(strVal);
     }
 

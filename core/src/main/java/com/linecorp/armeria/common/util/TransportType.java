@@ -102,7 +102,7 @@ public enum TransportType {
             return false;
         }
         final TransportType found = findOrNull((IoEventLoopGroup) eventLoopGroup);
-        return found != null ? found.supportsDomainSockets() : false;
+        return found != null && found.supportsDomainSockets();
     }
 
     /**
