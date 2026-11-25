@@ -8,13 +8,11 @@ profile:
   name: qodana.recommended
 include:
   - name: CheckDependencyLicenses
-with:
-  pr-mode: false
 
 disableSanityInspections: true
 
 failureConditions:
   severityThresholds:
     critical: 0
-    high: 3
+    high: 1
     moderate: 5
