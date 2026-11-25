@@ -47,7 +47,7 @@ public final class HttpStreamDeframer extends ArmeriaMessageDeframer {
 
     @Nullable
     private StreamMessage<DeframedMessage> deframedStreamMessage;
-    private boolean server;
+    private final boolean server;
     private boolean trailersReceived;
 
     public HttpStreamDeframer(

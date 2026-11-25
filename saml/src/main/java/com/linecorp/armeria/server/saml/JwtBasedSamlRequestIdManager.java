@@ -119,9 +119,8 @@ final class JwtBasedSamlRequestIdManager implements SamlRequestIdManager {
             final byte[] r = tempThreadLocals.byteArray(6);
             ThreadLocalRandom.current().nextBytes(r);
             final Encoder encoder = Base64.getEncoder();
-            return new StringBuilder().append(encoder.encodeToString(defaultMachineId()))
-                                      .append(encoder.encodeToString(r))
-                                      .toString();
+            return encoder.encodeToString(defaultMachineId()) +
+                    encoder.encodeToString(r);
         }
     }
 }

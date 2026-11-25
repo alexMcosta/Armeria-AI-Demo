@@ -76,9 +76,7 @@ public final class WebSocketUtil {
         int end;
         if (ignoreCase) {
             if ((end = AsciiString.indexOf(rawNext, ',', begin)) == -1) {
-                if (contentEqualsIgnoreCase(trim(rawNext), expected)) {
-                    return true;
-                }
+                return contentEqualsIgnoreCase(trim(rawNext), expected);
             } else {
                 do {
                     if (contentEqualsIgnoreCase(trim(rawNext.subSequence(begin, end)), expected)) {
@@ -88,16 +86,12 @@ public final class WebSocketUtil {
                 } while ((end = AsciiString.indexOf(rawNext, ',', begin)) != -1);
 
                 if (begin < rawNext.length()) {
-                    if (contentEqualsIgnoreCase(trim(rawNext.subSequence(begin, rawNext.length())), expected)) {
-                        return true;
-                    }
+                    return contentEqualsIgnoreCase(trim(rawNext.subSequence(begin, rawNext.length())), expected);
                 }
             }
         } else {
             if ((end = AsciiString.indexOf(rawNext, ',', begin)) == -1) {
-                if (contentEquals(trim(rawNext), expected)) {
-                    return true;
-                }
+                return contentEquals(trim(rawNext), expected);
             } else {
                 do {
                     if (contentEquals(trim(rawNext.subSequence(begin, end)), expected)) {
@@ -107,9 +101,7 @@ public final class WebSocketUtil {
                 } while ((end = AsciiString.indexOf(rawNext, ',', begin)) != -1);
 
                 if (begin < rawNext.length()) {
-                    if (contentEquals(trim(rawNext.subSequence(begin, rawNext.length())), expected)) {
-                        return true;
-                    }
+                    return contentEquals(trim(rawNext.subSequence(begin, rawNext.length())), expected);
                 }
             }
         }

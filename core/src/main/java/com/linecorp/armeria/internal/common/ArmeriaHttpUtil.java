@@ -1312,11 +1312,10 @@ public final class ArmeriaHttpUtil {
         if (port == defaultPort) {
             return host;
         } else {
-            final StringBuilder buf = new StringBuilder(host.length() + 6);
-            buf.append(host);
-            buf.append(':');
-            buf.append(port);
-            return buf.toString();
+            String buf = host +
+                    ':' +
+                    port;
+            return buf;
         }
     }
 

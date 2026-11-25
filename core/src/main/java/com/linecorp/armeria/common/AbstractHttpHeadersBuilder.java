@@ -58,7 +58,7 @@ abstract class AbstractHttpHeadersBuilder<SELF extends HttpHeadersBuilder> exten
 
     public final boolean isContentLengthUnknown() {
         final HttpHeadersBase getters = getters();
-        return getters != null ? getters.isContentLengthUnknown() : false;
+        return getters != null && getters.isContentLengthUnknown();
     }
 
     @Nullable
@@ -87,7 +87,7 @@ abstract class AbstractHttpHeadersBuilder<SELF extends HttpHeadersBuilder> exten
 
     public final boolean isEndOfStream() {
         final HttpHeadersBase getters = getters();
-        return getters != null ? getters.isEndOfStream() : false;
+        return getters != null && getters.isEndOfStream();
     }
 
     // Setters

@@ -349,12 +349,8 @@ final class DefaultRoute implements Route {
             return false;
         }
 
-        if (!headerPredicates.isEmpty() &&
-            noneMatchAnyNameOfNonCustomPredicate(headerPredicates, ((DefaultRoute) other).headerPredicates)) {
-            return false;
-        }
-
-        return true;
+        return headerPredicates.isEmpty() ||
+                !noneMatchAnyNameOfNonCustomPredicate(headerPredicates, ((DefaultRoute) other).headerPredicates);
     }
 
     private static <T> boolean noneMatchAnyNameOfNonCustomPredicate(List<RoutingPredicate<T>> thisPredicates,

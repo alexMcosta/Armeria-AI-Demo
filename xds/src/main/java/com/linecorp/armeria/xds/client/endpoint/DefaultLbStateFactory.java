@@ -194,7 +194,7 @@ final class DefaultLbStateFactory {
             final HostSet hostSet = prioritySet.hostSets().get(priority);
             assert hostSet != null;
             final boolean isPanic =
-                    normalizedTotalAvailability == 100 ? false : isHostSetInPanic(hostSet, panicThreshold);
+                    normalizedTotalAvailability != 100 && isHostSetInPanic(hostSet, panicThreshold);
             perPriorityPanicBuilder.put(priority, isPanic);
             totalPanic &= isPanic;
         }

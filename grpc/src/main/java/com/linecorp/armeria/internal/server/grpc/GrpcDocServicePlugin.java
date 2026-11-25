@@ -527,7 +527,7 @@ public final class GrpcDocServicePlugin implements DocServicePlugin {
                 ImmutableList.of(ParamInfo.builder("request",
                                                    descriptiveMessageSignature(method.getInputType()))
                                           .requirement(FieldRequirement.REQUIRED).build()),
-                true, ImmutableSet.<TypeSignature>of(),
+                true, ImmutableSet.of(),
                 endpointInfos,
                 ImmutableList.of(),
                 defaultExamples(method),

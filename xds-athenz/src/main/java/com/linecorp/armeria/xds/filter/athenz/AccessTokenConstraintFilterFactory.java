@@ -149,7 +149,7 @@ final class AccessTokenConstraintFilterFactory implements HttpFilterFactory {
                                           try {
                                               return delegate.serve(ctx, req);
                                           } catch (Exception e) {
-                                              return Exceptions.<HttpResponse>throwUnsafely(e);
+                                              return Exceptions.throwUnsafely(e);
                                           }
                                       }
                                       return HttpResponse.of(HttpStatus.FORBIDDEN);
@@ -245,7 +245,7 @@ final class AccessTokenConstraintFilterFactory implements HttpFilterFactory {
 
         boolean matchAndCapture(ServiceRequestContext ctx, Map<String, List<String>> captures) {
             final String value = resolveWellKnown(wellKnown, ctx);
-            if (value == null || !matcher.match(value)) {
+            if (!matcher.match(value)) {
                 return false;
             }
             if (captureName != null) {

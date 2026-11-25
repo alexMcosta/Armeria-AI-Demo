@@ -373,7 +373,7 @@ final class HttpsConnectionAcceptHandler extends SslClientHelloHandler<SslContex
             return e;
         }
         if (!(cause instanceof SSLHandshakeException)) {
-            cause = new SSLHandshakeException(e.getMessage()).initCause(e);
+            cause = new SSLHandshakeException(e.getMessage(), e);
         }
 
         return new DecoderException(cause);

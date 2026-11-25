@@ -49,7 +49,7 @@ final class RegisterInstanceClient {
                            @Nullable String namespaceId, @Nullable String groupName,
                            @Nullable String clusterName, @Nullable String app) {
         this.webClient = webClient;
-        instanceApiPath = new StringBuilder("/").append(nacosApiVersion).append("/ns/instance").toString();
+        instanceApiPath = "/" + nacosApiVersion + "/ns/instance";
 
         this.serviceName = requireNonNull(serviceName, "serviceName");
         this.namespaceId = namespaceId;

@@ -68,10 +68,8 @@ public final class DefaultExceptionClassifier implements ExceptionClassifier {
                 return true;
             }
 
-            if (cause instanceof SSLException && IGNORABLE_TLS_ERROR_MESSAGE.matcher(msg).find()) {
-                // Can happen when disconnected prematurely.
-                return true;
-            }
+            // Can happen when disconnected prematurely.
+            return cause instanceof SSLException && IGNORABLE_TLS_ERROR_MESSAGE.matcher(msg).find();
         }
 
         return false;

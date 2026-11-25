@@ -147,10 +147,6 @@ public final class RuleFilter implements BiFunction<ClientRequestContext, Throwa
             }
         }
 
-        if (matchSuccessFunction && ctx.options().successFunction().isSuccess(ctx, log)) {
-            return true;
-        }
-
-        return false;
+        return matchSuccessFunction && ctx.options().successFunction().isSuccess(ctx, log);
     }
 }

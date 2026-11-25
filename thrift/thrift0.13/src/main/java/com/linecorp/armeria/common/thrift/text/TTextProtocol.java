@@ -804,7 +804,7 @@ final class TTextProtocol extends TProtocol {
         final String ret;
         try {
             wbaos.writer.flush();
-            ret = new String(wbaos.baos.toByteArray());
+            ret = wbaos.baos.toString();
             wbaos.writer.close();
         } catch (IOException e) {
             throw new TException(e);
